@@ -1,16 +1,13 @@
 class Api::ProductsController < ApplicationController
-  def product
+  def products_active
     @products = Product.all
+    render "products.json.jb"
+  end
+
+  def product
+    variable = params["product_id"]
+    @product = Product.find_by(id: variable)
     render "product.json.jb"
   end
 
-  def health_potion
-    @health_potion = Product.find_by(name: "Health Potion")
-    render "health_potion.json.jb"
-  end
-
-  def mana_potion
-    @mana_potion = Product.find_by(name: "Mana Potion")
-    render "mana_potion.json.jb"
-  end
 end
