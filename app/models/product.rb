@@ -5,6 +5,8 @@ class Product < ApplicationRecord
 
   belongs_to :supplier
 
+  has_many :images
+
   def friendly_update_at
     updated_at.strftime("%B%e, %Y")
   end
