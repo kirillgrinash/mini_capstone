@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :description, length: { in: 2..500 } 
 
   belongs_to :supplier
-
+  has_many :orders
   has_many :images
 
   def friendly_update_at
