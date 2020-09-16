@@ -1,7 +1,5 @@
 class Api::ProductsController < ApplicationController
   def index
-
-    p current_user
     
     @products = Product.all
 
